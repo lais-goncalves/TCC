@@ -1,0 +1,140 @@
+@import "variaveis";
+
+.main{
+  margin-top: 15vh;
+  padding-bottom: 15vh;
+}
+
+h3 {
+  margin: 20px auto;
+  display: block;
+  font-size: 50px;
+
+  &,
+  &::after {
+    animation: none;
+  }
+
+  @include tamanho(resp) {
+    margin: 20px auto 5px;
+  }
+
+  @include tamanho(celular) {
+    font-size: 6vw;
+    text-align: center;
+  }
+
+  @include tamanho(tablet) {
+    margin: 20px auto 0px;
+  }
+
+  @include tamanho(desktop) {
+    margin: 20px auto 35px;
+  }
+}
+
+.legenda {
+  font-size: 22px;
+  margin-top: -20px;
+}
+
+.main-carousel {
+  overflow: hidden;
+  margin-top: 7vh;
+}
+
+
+.carousel-cell {
+  width: 48%; /* full width */
+  height: 45vh; /* height of carousel */
+  margin-right: 40px;
+  background: var(--corBackground);
+  border: 2px solid var(--corComentario);
+  box-shadow: 13px 13px 0px var(--corNotif);
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+  padding: 30px;
+
+  img {
+    display: block;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+
+    @include tamanho(resp) {
+      height: 22vw;
+      width: 22vw;
+    }
+
+    @include tamanho(tablet) {
+      height: 10vw;
+      width: 10vw;
+    }
+
+    @include tamanho(desktop) {
+      height: 9vw;
+      width: 9vw;
+    }
+  }
+
+  p {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nome {
+    font-family: $fonMono;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 2vh auto 1vh;
+  }
+
+  .cargo {
+    background-color: var(--corBackground2);
+    padding: 2px 17px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 2vh;
+  }
+
+  &::before {
+    display: block;
+    text-align: center;
+    line-height: 200px;
+    font-size: 80px;
+    color: var(--corFonte);
+  }
+
+  @include tamanho(resp) {
+    width: 100%;
+    padding: 50px 40px;
+  }
+
+  @include tamanho(tablet) {
+    width: 70%;
+  }
+
+  @include tamanho(desktop) {
+    width: 48%;
+  }
+}
+
+#banner{
+  margin-top: 12vh;
+  text-align: center;
+
+  h2{
+    display: block;
+  }
+
+  img{
+    width: 50vw;
+    display: block;
+    margin: auto;
+    margin-top: -12vh;
+    height: auto;
+    border: 2px solid var(--corComentario);
+    border-radius: 8px;
+  }
+}

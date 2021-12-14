@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Estilo/principal.css" />
+    <link rel="stylesheet" href="Estilo/home.css" />
+    <link rel="stylesheet" href="Estilo/navbar.css" />
+    <link
+      rel="shortcut icon"
+      href="Imagens/Icones/icone_charlie.png"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/04cbf46b06.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="JS/principal.js"></script>
+    <title>Página Inicial</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" id="logo"
+        ><img
+          src="Imagens/Icones/icone_charlie1-2.png"
+          id="img1"
+          title="logo" />
+        <p>Charlie</p>
+        <img src="Imagens/Icones/icone_charlie2-2.png" id="img2" title="logo"
+      /></a>
+      <a href="javascript:void(0);" class="icon" onclick="resp_nav()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <section id="navbar" class="">
+        <i
+          class="fas fa-moon change_mode"
+          onclick="change_mode()"
+          alt="Modo escuro"
+          id="change_mode"
+        ></i>
+        <a href="sobre_nos.html" id="nav-link">Sobre nós</a>
+        <a href="cursos_menu.html" id="nav-link">Cursos</a>
+        <a href="inscrever.html" class="botao">Inscreva-se</a>
+      </section>
+    </nav>
+
+    <figure class="figuras">
+      <p id="fig0" class="figura">. . .</p>
+      <p id="fig1" class="figura">()</p>
+      <p id="fig2" class="figura">< /></p>
+      <p id="fig3" class="figura">{}</p>
+      <p id="fig4" class="figura">...</p>
+      <p id="fig5" class="figura">()</p>
+      <p id="fig6" class="figura">0101</p>
+      <p id="fig7" class="figura">. . .</p>
+      <p id="fig8" class="figura">{}</p>
+    </figure>
+
+    <!----- MAIN ----->
+
+    <div class="main">
+      <div class="titulo_principal">
+        <img src="Imagens/Icones/icone_charlie1-2.png" class="img-1" />
+        <h1 id="titulo_principal">
+          <p>Aprenda programação</p>
+          <p style="font-weight: bold">gratuitamente!</p>
+        </h1>
+        <img class="img-2" src="Imagens/Icones/icone_charlie2-2.png" alt="" />
+        <p id="txtTitulo">
+          <mark>/* </mark>Charlie é uma plataforma de estudos que disponibiliza
+          cursos na área da programação sem qualquer custo.<mark> */</mark>
+        </p>
+
+        <section id="botoes">
+          <a href="inscrever.html" class="botao" id="btnTitInscrever"
+            >Quero me inscrever!</a
+          >
+          <a href="login.html" class="botao" id="btnTitLogar"
+            >Já sou inscrito</a
+          >
+        </section>
+      </div>
+
+      <div class="cursos">
+        <h2>Nossos cursos</h2>
+        <div class="cursos_itens">
+          <div class="item_curso1" id="num_1">
+            <div class="num_curso" data-aos="fade-up">1</div>
+            <div class="texto_curso"><p>Curso 1</p></div>
+          </div>
+
+          <div class="item_curso2" id="num_2">
+            <div class="num_curso" data-aos="fade-up" data-aos-delay="200">
+              2
+            </div>
+            <div class="texto_curso"><p>Curso 2</p></div>
+          </div>
+
+          <div class="item_curso3" id="num_3">
+            <div class="num_curso" data-aos="fade-up" data-aos-delay="400">
+              3
+            </div>
+            <div class="texto_curso"><p>Curso 3</p></div>
+          </div>
+        </div>
+        <a href="cursos_menu.html"><mark>//Clique para ver mais</mark></a>
+      </div>
+    </div>
+
+    <div class="formulario" data-aos="fade-up" data-aos-delay="200">
+      <h2>Contate-nos! :)</h2>
+      <form action="">
+        <input type="text" name="nome" id="" placeholder="Seu nome" />
+        <input type="email" name="email" id="" placeholder="Seu e-mail" />
+        <textarea
+          name="texto"
+          id=""
+          cols="30"
+          rows="8"
+          placeholder="Digite uma mensagem aqui!"
+        ></textarea>
+        <button class="botao">Enviar</button>
+      </form>
+    </div>
+
+    <div class="final">
+      <div class="titulo" data-aos="fade-up">
+        <h1>Se interessou? É de graça. Clica aí!</h1>
+      </div>
+      <a href="inscrever.html"
+        ><button class="botao" data-aos="fade-up" data-aos-delay="200">
+          Inscrever-se :)
+        </button></a
+      >
+    </div>
+
+    <footer><p>Charlie@2021</p></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

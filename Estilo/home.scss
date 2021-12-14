@@ -1,0 +1,584 @@
+@import "variaveis";
+
+.titulo_principal {
+  h1 {
+    animation: none;
+    margin-top: 0;
+  }
+
+  img {
+    height: 5vw;
+    display: inline-block;
+    position: relative;
+
+    @include transicao(0.2s);
+    @include sem_select;
+
+    @include tamanho(celular) {
+      display: none;
+    }
+
+    @include tamanho(tablet) {
+      display: none;
+    }
+
+    @include tamanho(desktop) {
+      margin: 10vh 0;
+      display: inline-block;
+    }
+  }
+
+  #titulo_principal {
+    display: inline-block;
+    padding: 0 3.5vw;
+
+    @include tamanho(resp) {
+      font-size: 7vw;
+      display: inline-block;
+    }
+
+    @include tamanho(tablet) {
+      font-size: 5.1vw;
+      display: inline-block;
+    }
+
+    @include tamanho(desktop) {
+      font-size: 3.6vw;
+    }
+
+    p {
+      line-height: 0.3;
+    }
+
+    #botoes {
+      .botao {
+        padding: 17px 27.5px;
+      }
+    }
+
+    @include centralizar;
+    &:after {
+      display: none;
+    }
+  }
+
+  .comentario {
+    font-style: normal;
+  }
+
+  #txtTitulo {
+    font-size: 1.4vw;
+    width: 41vw;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0 auto;
+
+    @include tamanho(resp) {
+      font-size: 3vw;
+      width: 85vw;
+    }
+
+    @include tamanho(tablet) {
+      font-size: 2.1vw;
+      width: 60vw;
+    }
+
+    @include tamanho(desktop) {
+      font-size: 1.4vw;
+      width: 41vw;
+    }
+  }
+
+  #botoes {
+    margin: 110px auto;
+
+    .botao {
+      padding: 16px 20px;
+      position: static;
+      display: inline-block;
+      width: 317px;
+      font-family: $fonMono;
+      margin: 0 15px;
+      font-size: 20px;
+      border: none;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      &:hover {
+        transform: scale(102%);
+        //box-shadow: 0 0 15px var(--corBackground2);
+      }
+
+      @include tamanho(celular) {
+        width: 40vw;
+        display: block;
+      }
+
+      @include tamanho(resp) {
+        display: block;
+      }
+
+      @include tamanho(tablet) {
+        width: 30vw;
+      }
+
+      @include tamanho(desktop) {
+        width: 120px;
+      }
+    }
+
+    #btnTitInscrever {
+      color: var(--corEscuro);
+      border-color: var(--corEscuro);
+      @include gradiente;
+    }
+
+    #btnTitLogar {
+      background-color: var(--corBackground2);
+      opacity: 75%;
+
+      @include transicao(0.09s);
+
+      &:hover {
+        background: var(--corBackground2);
+        opacity: 100%;
+        color: var(--corFonte);
+      }
+    }
+
+    @media screen and (max-width: 1340px) {
+      .botao {
+        padding: 16px 20px;
+        position: static;
+        display: inline-block;
+        width: 20vw;
+        font-size: 15px;
+
+        &:hover {
+          transform: scale(102%);
+        }
+      }
+    }
+
+    @include tamanho(resp) {
+      margin: 5vh auto 6vh;
+
+      .botao {
+        margin: 10px auto;
+        display: block;
+        width: 50vw;
+        padding: 10px 20px;
+      }
+    }
+
+    @include tamanho(tablet) {
+      margin: 7vh auto 6vh;
+
+      .botao {
+        margin: 20px 20px;
+        width: 22vw;
+        padding: 10px 20px;
+        display: inline-block;
+      }
+    }
+
+    @include tamanho(desktop) {
+      margin: 7vh auto 6vh;
+
+      .botao {
+        margin: 20px 20px;
+        width: 20vw;
+        padding: 15px 23px;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: var(--corBackground2);
+
+  @include tamanho(resp) {
+    background-color: var(--corBackground);
+  }
+}
+
+.cursos {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 20px;
+
+  @include tamanho(celular) {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 2.5vw;
+
+    @include tamanho(resp) {
+      font-size: 7vw;
+      margin-bottom: 5vh;
+    }
+
+    @include tamanho(tablet) {
+      font-size: 4vw;
+      margin-bottom: 10vh;
+    }
+
+    @include tamanho(desktop) {
+      font-size: 2.5vw;
+      margin-bottom: 9vh;
+    }
+  }
+
+  mark {
+    font-size: 1.2em;
+    font-family: $fonMono;
+    font-style: normal;
+
+    @include transicao(0.1s);
+
+    &:hover {
+      border-bottom: solid 1.5px var(--corFonte);
+      color: var(--corFonte);
+    }
+
+    @include tamanho(celular) {
+      font-size: 3.5vw;
+    }
+  }
+
+  .cursos_itens {
+    display: grid;
+    grid-gap: 2vw;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 30vh;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    @include transicao(0.2s);
+
+    @media screen and(max-width: 560px) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 60px;
+      grid-template-rows: repeat(3, 30vh);
+    }
+
+    @media screen and(max-width: 700px) {
+      grid-template-columns: repeat(1, 0.85fr);
+      grid-gap: 60px;
+      grid-template-rows: repeat(3, 30vh);
+    }
+
+    @media screen and(max-width: 1199px) {
+      @media screen and(min-width: 701px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 40px;
+        grid-template-rows: repeat(2, 30vh);
+      }
+    }
+
+    @include tamanho(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2vw;
+    }
+
+    .item_curso1 {
+      background-image: url("https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    }
+
+    .item_curso2 {
+      background-image: url("https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    }
+
+    .item_curso3 {
+      background-image: url("https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    }
+
+    .item_curso1,
+    .item_curso2,
+    .item_curso3 {
+      box-shadow: inset 0 0 0 10000px var(--corTransp);
+      border: 1.5px solid var(--corLink);
+      border-radius: 8px;
+      opacity: 85%;
+      text-align: center;
+      font-weight: bold;
+
+      @include transicao(0.2s);
+
+      &:hover {
+        .texto_curso {
+          color: white;
+        }
+
+        transform: scale(102%);
+        cursor: pointer;
+        box-shadow: 0 0 15px var(--verde_medio);
+        opacity: 100%;
+      }
+
+      @include transicao(0.1s);
+
+      .num_curso {
+        font-size: 5rem;
+        font-family: $fonMono;
+        margin-top: -10px;
+        margin: -50px auto 0;
+
+        @include tamanho(resp) {
+          display: none;
+        }
+      }
+
+      .texto_curso {
+        font-family: $fonMono;
+        font-size: 1.8em;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3vh;
+
+        @include tamanho(resp) {
+          margin-top: 10vh;
+        }
+      }
+    }
+
+    @include tamanho(resp) {
+      grid-gap: 2vh;
+    }
+  }
+}
+
+.final {
+  width: 100vw;
+  background: var(--corBackground2);
+  text-align: center;
+  padding: 30vh 0 30vh;
+  height: 80vh;
+  text-overflow: ellipsis;
+
+  h1 {
+    animation: none;
+
+    &::after {
+      height: 0;
+    }
+
+    @include tamanho(tablet) {
+      max-width: 80%;
+    }
+
+    @include tamanho(desktop) {
+      max-width: 100%;
+    }
+  }
+
+  .botao {
+    @include gradiente;
+    color: var(--corEscuro);
+    border: none;
+    padding: 10px 30px;
+    font-size: 30px;
+    margin-top: 7vh;
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  @include tamanho(resp) {
+    display: none;
+  }
+}
+
+.formulario {
+  margin: -5vh auto 11vh;
+  padding: 5vh 4vw 7vh;
+  border: 2px solid var(--corComentario);
+  border-radius: 8px;
+  width: fit-content;
+  box-shadow: 13px 13px 0px var(--corNotif);
+  background-color: var(--corBackground);
+  text-align: center;
+
+  h2 {
+    margin-bottom: 2vh;
+    font-size: 2.5vw;
+
+    @include tamanho(resp) {
+      font-size: 7vw;
+    }
+
+    @include tamanho(tablet) {
+      font-size: 4vw;
+    }
+
+    @include tamanho(desktop) {
+      font-size: 2.5vw;
+    }
+  }
+
+  form {
+    input {
+      margin: auto;
+    }
+
+    textarea {
+      font-family: $fonNormal;
+      margin: 3vh auto;
+      display: block;
+      border-radius: 8px;
+      resize: none;
+      padding: 10px;
+      border: 1px solid var(--corComentario);
+
+      &:focus {
+        border: 1px solid var(--corLink);
+        outline: none;
+      }
+
+      @include sem_select;
+    }
+
+    input,
+    textarea {
+      width: 22vw;
+      font-size: 18px;
+      margin-bottom: 3vh;
+
+      @include tamanho(resp) {
+        font-size: 16px;
+        width: 50vw;
+      }
+
+      @include tamanho(tablet) {
+        font-size: 17px;
+        width: 37vw;
+      }
+
+      @include tamanho(desktop) {
+        font-size: 18px;
+        width: 22vw;
+      }
+    }
+
+    button {
+      font-size: 22px;
+      padding: 10px 30px;
+      margin-top: 1vh;
+    }
+  }
+}
+
+.figuras {
+  @include sem_select;
+
+  #fig0 {
+    color: transparent;
+    text-shadow: 0 0 1.6px var(--corLinkTransp);
+    font-size: 30px;
+    left: 30%;
+    top: 8vh;
+    position: fixed;
+    z-index: -10;
+    animation: efeito_mostra 2.5s forwards ease-in-out;
+  }
+
+  #fig1 {
+    color: $verde;
+    font-size: 38px;
+    right: 22%;
+    top: 10vh;
+    position: absolute;
+    letter-spacing: 15px;
+    z-index: 10;
+    animation: efeito_mostra 1s forwards ease-in-out;
+  }
+
+  #fig2 {
+    color: transparent;
+    text-shadow: 0 0 1.2px var(--corLinkTransp);
+    font-size: 25px;
+    right: 20%;
+    top: 42vh;
+    position: fixed;
+    z-index: -11;
+    animation: efeito_mostra 2s forwards ease-in-out;
+  }
+
+  #fig3 {
+    color: $verde;
+    font-size: 40px;
+    left: 20%;
+    top: 50vh;
+    position: absolute;
+    letter-spacing: 10px;
+    z-index: 11;
+    animation: efeito_mostra 1s forwards ease-in-out;
+  }
+
+  #fig4 {
+    color: $azul;
+    font-family: $fonMono;
+    font-size: 25px;
+    position: absolute;
+    right: 24%;
+    top: 73vh;
+    z-index: 12;
+    letter-spacing: 12px;
+    animation: efeito_mostra 1s forwards ease-in-out;
+  }
+
+  #fig5 {
+    color: transparent;
+    text-shadow: 0 0 1.3px var(--corLinkTransp);
+    font-size: 30px;
+    position: fixed;
+    left: 24%;
+    top: 85vh;
+    z-index: -12;
+    letter-spacing: 12px;
+    animation: efeito_mostra 2.5s forwards ease-in-out;
+  }
+
+  #fig6 {
+    color: transparent;
+    text-shadow: 0 0 1.6px var(--corLinkTransp);
+    font-family: $fonMono;
+    font-size: 20px;
+    position: fixed;
+    left: 18%;
+    top: 44vh;
+    z-index: -13;
+    animation: efeito_mostra 2s forwards ease-in-out;
+  }
+
+  #fig7 {
+    color: $azul;
+    font-family: $fonMono;
+    font-size: 20px;
+    position: absolute;
+    left: 26%;
+    top: 154vh;
+    z-index: 12;
+    animation: efeito_mostra 1s forwards ease-in-out;
+  }
+
+  #fig8 {
+    color: $verde;
+    font-size: 40px;
+    right: 25%;
+    top: 160vh;
+    position: absolute;
+    letter-spacing: 10px;
+    z-index: 11;
+    animation: efeito_mostra 1s forwards ease-in-out;
+  }
+}
+
+//--------------------------------------------------------------------

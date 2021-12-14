@@ -1,0 +1,168 @@
+@import "cursos";
+
+#curso {
+  text-align: center;
+
+  h2 {
+    text-align: left;
+  }
+}
+
+.main {
+  margin-top: 90px;
+}
+
+#video_curso {
+  background: rgb(0, 0, 0);
+  border-radius: 8px;
+  border: 1px solid var(--corComentario);
+  width: 85%;
+  margin: auto;
+  box-shadow: 15px 15px 0px var(--corNotif);
+
+  video {
+    display: block;
+    border-radius: inherit;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+#titulo_proximos_videos {
+  background-color: var(--verde_medio);
+  font-size: 30px;
+  padding: 3px 15px;
+  margin: 100px auto 70px;
+  display: inline-block;
+
+  animation: none;
+
+  &::after {
+    animation: none;
+  }
+
+  @include tamanho(celular) {
+    font-size: 26px;
+  }
+
+  @include tamanho(resp) {
+    margin: 70px auto 30px;
+  }
+}
+
+#proximos_videos_curso_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+
+  img {
+    width: 100%;
+    height: 250px;
+
+    @include tamanho(tablet) {
+      width: 35vw;
+      height: 22vw;
+    }
+
+    @include tamanho(desktop) {
+      width: 100%;
+      height: 14vw;
+    }
+  }
+
+  .proximos_videos_item {
+    margin: 0 2px 20px;
+    border-radius: 8px;
+    color: var(--corFobte);
+
+    @include transicao(0.03s);
+
+    img {
+      border-radius: 5px; //5px 0 0;
+
+      @include tamanho(resp) {
+        display: none;
+      }
+    }
+
+    figure {
+      font-size: 20px;
+      margin: -40px 0 10px;
+
+      @include tamanho(resp) {
+        margin: auto;
+      }
+    }
+
+    figcaption {
+      position: relative;
+      top: -50%;
+      opacity: 0;
+      color: white;
+
+      @include transicao(0.06s);
+
+      i {
+        font-size: 45px;
+        margin: 0;
+        padding: 0;
+      }
+
+      @include tamanho(resp) {
+        display: none;
+      }
+    }
+
+    &:hover {
+      @include transicao(0.1s);
+
+      @include tamanho(resp) {
+        background-color: var(--corNotif);
+      }
+
+      @include tamanho(tablet) {
+        img {
+          filter: brightness(0.7);
+        }
+      }
+
+      @include tamanho(desktop) {
+        img {
+          filter: brightness(0.7);
+        }
+      }
+
+      figcaption {
+        opacity: 1;
+      }
+    }
+
+    @include tamanho(resp) {
+      padding: 15px;
+      border: 1px solid var(--corComentario);
+      border-radius: 3px;
+      margin: 0 2px 3vh;
+
+      @include transicao(0.1s);
+    }
+
+    &:active {
+      color: var(--corFonte);
+    }
+  }
+
+  @include tamanho(resp) {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+
+  @include tamanho(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+
+  @include tamanho(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+  }
+}

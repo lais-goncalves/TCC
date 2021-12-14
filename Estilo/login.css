@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+.black-mode:root {
+  --corBackground: #08111b /*#141442*/;
+  --corBackground2: #020b1399;
+  --corBackground3: #01050899;
+  --corBackground4: linear-gradient(
+    180deg,
+    rgba(8, 17, 27, 1) 0%,
+    rgba(6, 18, 31, 1) 100%
+  );
+  --corTransp: #03154180;
+  --corFonte: white;
+  --verde_medio: #30828dde;
+  --corComentario: #3d5c7e;
+  --corEscuro: #010a12;
+  --corLink: #069aad;
+  --corNotif: #04081199;
+  --corNotif2: #01080e;
+  --corNotifFont: white;
+}
+
+.mid-mode:root {
+  --corBackground: #4085e0;
+  --corBackground2: #1b6bd399;
+  --corBackground3: #04489699;
+  --corBackground4: linear-gradient(
+    180deg,
+    rgba(64, 133, 224, 1) 0%,
+    #488de8 100%
+  );
+  --corTransp: #087ad8b6;
+  --corFonte: white;
+  --verde_medio: #4298b3de;
+  --corComentario: #6aa3e4;
+  --corEscuro: #010712;
+  --corLink: #71cef3;
+  --corLinkTransp: rgba(95, 206, 250, 0.4);
+  --corNotif: #1369b999;
+  --corNotif2: #e2edf7;
+  --corNotifFont: #031120;
+}
+
+.white-mode:root {
+  --corBackground: white;
+  --corBackground2: #b4e5f390;
+  --corBackground3: #8eb9c490;
+  --corBackground4: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(240, 247, 255, 1) 100%
+  );
+  --corTransp: #92e6fdb6;
+  --corFonte: #0d4468;
+  --verde_medio: #88d6dfd8;
+  --corComentario: #7bbed3;
+  --corEscuro: #010a12;
+  --corLink: #026891;
+  --corNotif: #daecec99;
+  --corNotif2: #fff;
+  --corNotifFont: #031120;
+}
+
+@-webkit-keyframes efeito_barra {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes efeito_barra {
+  to {
+    background: transparent;
+  }
+}
+
+@-webkit-keyframes efeito_maquina {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes efeito_maquina {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes efeito_mostra {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes efeito_mostra {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@-webkit-keyframes efeito_mostra_notif {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(120px);
+            transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes efeito_mostra_notif {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(120px);
+            transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+* {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.main {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 35px;
+}
+
+form {
+  /*
+    h1 {
+        animation: efeito_maquina 7.5s steps(70) normal;
+    }
+    */
+}
+
+form a,
+form input,
+form h1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form input {
+  padding-bottom: 10px;
+  margin: 50px auto 20px;
+}
+
+@media (max-width: 599px) {
+  form input {
+    width: 70%;
+  }
+}
+
+@media (min-width: 600px) {
+  form input {
+    width: 55%;
+  }
+}
+
+@media (min-width: 1200px) {
+  form input {
+    width: 35%;
+  }
+}
+
+form #aLogin,
+form #aInscrever {
+  color: var(--corLink);
+  font-family: "Oxygen Mono";
+  font-size: 0.85em;
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+form #aLogin:hover,
+form #aInscrever:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#34f5c6), to(#1dcdfe));
+  background: linear-gradient(to right, #34f5c6, #1dcdfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 599px) {
+  form #aLogin,
+  form #aInscrever {
+    font-size: 0.75em;
+  }
+}
+
+form .botao {
+  letter-spacing: 1.5px;
+  font-size: 1.3em;
+  padding: 15px 30px;
+}
+
+form .botao:hover {
+  -webkit-transform: scale(105%);
+          transform: scale(105%);
+}
+
+@media (max-width: 599px) {
+  form .botao {
+    font-size: 1em;
+    padding: 10px 25px;
+  }
+}
+
+nav img {
+  margin: 0 10px;
+}
+
+.figuras {
+  opacity: 0.8;
+}
+
+@media (max-width: 700px) {
+  .figuras {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 600px) {
+  .figuras {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .figuras {
+    opacity: 0.8;
+  }
+}
+/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,104 @@
+@import "variaveis";
+
+// ----------- INÍCIO -----------
+* {
+  @include transicao(0.2s);
+}
+
+.main {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 35px;
+}
+
+form {
+  a,
+  input,
+  h1 {
+    display: block;
+
+    @include centralizar;
+  }
+
+  input {
+    padding-bottom: 10px;
+    margin: 50px auto 20px;
+
+    @include tamanho(celular) {
+      width: 70%;
+    }
+
+    @include tamanho(tablet) {
+      width: 55%;
+    }
+
+    @include tamanho(desktop) {
+      width: 35%;
+    }
+  }
+
+  #aLogin,
+  #aInscrever {
+    color: var(--corLink);
+    font-family: $fonMono;
+    font-size: 0.85em;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+
+    display: inline-block;
+
+    //animation: efeito_maquina 10s steps(120) normal;
+
+    &:hover {
+      @include grad_font;
+    }
+
+    @include tamanho(celular) {
+      font-size: 0.75em;
+    }
+  }
+
+  /*
+    h1 {
+        animation: efeito_maquina 7.5s steps(70) normal;
+    }
+    */
+
+  .botao {
+    letter-spacing: 1.5px;
+    font-size: 1.3em;
+    padding: 15px 30px;
+
+    &:hover {
+      transform: scale(105%);
+    }
+
+    @include tamanho(celular) {
+      font-size: 1em;
+      padding: 10px 25px;
+    }
+  }
+}
+
+nav {
+  img {
+    margin: 0 10px;
+  }
+}
+
+.figuras {
+  opacity: 0.8;
+
+  @include tamanho(resp) {
+    opacity: 0;
+  }
+
+  @include tamanho(tablet) {
+    opacity: 0;
+  }
+
+  @include tamanho(desktop) {
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,439 @@
+@import "variaveis";
+
+.main {
+    margin-top: 90px;
+}
+
+#curso {
+    margin-top: 40px;
+    text-align: left;
+    display: block;
+
+    #titulo_curso {
+        margin: 20px auto 35px;
+        display: block;
+        font-size: 30px;
+
+        i {
+            @include grad_font;
+        }
+
+        &::after {
+            width: 0;
+        }
+
+        &,
+        &::after {
+            animation: none;
+        }
+
+        @include tamanho(resp) {
+            margin: 20px auto 5px;
+        }
+
+        @include tamanho(celular) {
+            font-size: 6vw;
+            text-align: center;
+        }
+
+        @include tamanho(tablet) {
+            margin: 20px auto 0px;
+        }
+
+        @include tamanho(desktop) {
+            margin: 20px auto 35px;
+        }
+    }
+
+    #dados_curso {
+        height: fit-content;
+        display: grid;
+        grid-gap: 1vw;
+        grid-template-columns: 1.2fr 0.8fr;
+        justify-content: center;
+
+        #img_curso {
+            img {
+                width: 95%;
+                height: auto;
+                border-radius: 8px;
+
+                @include tamanho(celular) {
+                    display: none;
+                }
+
+                @include tamanho(tablet) {
+                    display: none;
+                }
+
+                @include tamanho(desktop) {
+                    display: inline-block;
+                }
+            }
+        }
+
+        @include tamanho(resp) {
+            grid-template-columns: 1fr;
+
+            #img_curso {
+                img {
+                    display: none;
+                }
+            }
+        }
+
+        @include tamanho(tablet) {
+            grid-template-columns: 1fr;
+        }
+
+        @include tamanho(desktop) {
+            grid-template-columns: 1.2fr 0.8fr;
+        }
+    }
+
+    #descricao {
+        font-size: 17px;
+        padding: 0 2vw;
+
+        .comentario {
+            font-size: 23.5px;
+
+            @include tamanho(celular) {
+                display: none;
+            }
+
+            @include tamanho(tablet) {
+                display: none;
+            }
+        }
+
+        #desc_lista {
+            margin: 7vh auto;
+            display: block;
+
+            #desc_lista_item {
+                display: block;
+                margin-left: 25px;
+                text-align: left;
+
+                p {
+                    display: inline;
+                }
+
+                i {
+                    margin-right: 10px;
+                    display: inline;
+
+                    @include grad-font;
+                }
+
+                @include tamanho(tablet) {
+                    margin-left: 50px;
+                }
+
+                @include tamanho(desktop) {
+                    margin-left: 25px;
+                }
+            }
+
+            @include tamanho(resp) {
+                margin: 5vh auto;
+
+                p {
+                    display: block;
+                }
+
+                i {
+                    display: block;
+                }
+            }
+        }
+
+        #desc_botao {
+            padding: 10px 30px;
+            margin-top: 20px;
+        }
+
+        @include tamanho(resp) {
+            padding: 0 3vw;
+            font-size: 17px;
+        }
+
+        @include tamanho(celular) {
+            font-size: 16px;
+        }
+    }
+
+    #curso_andamento {
+        background-color: var(--corBackground2);
+        width: fit-content;
+        padding: 2px 15px;
+        position: relative;
+        margin-top: -10px;
+        margin-left: 20px;
+        font-size: 21px;
+        //border: 1px solid $verde;
+
+        @include tamanho(resp) {
+            margin: auto;
+            font-size: 19px;
+        }
+
+        @include tamanho(celular) {
+            font-size: 18px;
+        }
+
+        @include tamanho(tablet) {
+            //margin: auto;
+            margin-top: 6vh;
+        }
+
+        @include tamanho(desktop) {
+            margin: unset;
+        }
+    }
+}
+
+#requisitos {
+    text-align: left;
+    display: block;
+    margin: 10vh 3vw 0;
+    padding: 20px 50px 40px;
+    border-radius: 8px;
+    border: solid 1px var(--corComentario);
+    box-shadow: 13px 13px 0px var(--corNotif);
+    background-color: var(--corBackground);
+
+    @include transicao(0.25s);
+
+    h3 {
+        animation: none;
+        font-size: 27px;
+        margin-left: 2vw;
+        padding: 2px 8px;
+        background-color: var(--verde_medio);
+
+        &::after {
+            width: 0;
+        }
+
+        @include tamanho(resp) {
+            text-align: center;
+            margin: 30px auto 0;
+        }
+
+        @include tamanho(celular) {
+            font-size: 4.5vw;
+        }
+
+        @include tamanho(tablet) {
+            margin: 30px auto 10px 30px;
+        }
+    }
+
+    #requis_itens {
+        text-align: center;
+        padding: 0 6vw;
+        @include transicao(0.25s);
+
+        p {
+            font-size: 17px;
+            display: inline-block;
+            margin: 20px 30px;
+
+            @include transicao(0.25s);
+
+            &::before {
+                content: "";
+                width: 6px;
+                height: 6px;
+                margin-right: 10px;
+                margin-bottom: 2px;
+                display: inline-block;
+                border-radius: 50%;
+
+                animation: efeito_barra 1s normal;
+
+                @include gradiente;
+            }
+
+            @include tamanho(resp) {
+                margin: 20px 10px;
+                font-size: 17px;
+            }
+
+            @include tamanho(celular) {
+                font-size: 16px;
+            }
+
+            @include tamanho(tablet) {
+                margin: 20px 20px;
+                font-size: 17px;
+            }
+        }
+
+        @include tamanho(resp) {
+            padding: 5px 45px 5px;
+        }
+
+        @include tamanho(celular) {
+            padding: 5px 25px 5px;
+        }
+    }
+
+    @include tamanho(resp) {
+        text-align: center;
+        width: fit-content;
+        padding: 20px 5px 30px;
+    }
+
+    @include tamanho(tablet) {
+        width: fit-content;
+        padding: 10px 30px 20px;
+    }
+}
+
+.aulas {
+    text-align: left;
+
+    h2 {
+        margin: 10vh 0 5vh;
+        font-size: 35px;
+        margin-left: 4vw;
+
+        @include tamanho(resp) {
+            text-align: center;
+            margin-left: 0;
+        }
+
+        @include tamanho(celular) {
+            font-size: 4.7vw;
+        }
+    }
+
+    .aulas_container {
+        text-align: center;
+        margin: auto;
+        width: 50vw;
+
+        a {
+            &:visited {
+                text-decoration: none;
+                color: var(--corFonte);
+            }
+        }
+
+        .aulas_itens {
+            border-radius: 8px;
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 0 auto 3vh;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--corFonte);
+            flex-wrap: wrap;
+
+            &:hover {
+                background-color: var(--corNotif);
+                transition: 0.2s;
+            }
+
+            img {
+                display: inline-block;
+                width: 25vw;
+                height: 15vw;
+                border-radius: 8px;
+
+                @include tamanho(resp) {
+                    display: none;
+                }
+
+                @include tamanho(tablet) {
+                    border-radius: 4px;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            .aulas_itens_texto {
+                margin: 3vh 0 0 3vw;
+
+                .aulas_itens_titulo {
+                    font-family: $fonMono;
+                    font-weight: bold;
+                }
+
+                .aulas_itens_tempo {
+                    color: var(--corLink);
+                    margin-top: 25px;
+                }
+
+                @include tamanho(resp) {
+                    display: grid;
+                    grid-template-columns: 0.8fr 0.2fr;
+
+                    .aulas_itens_titulo {
+                        margin-top: 0;
+                    }
+
+                    .aulas_itens_tempo {
+                        margin-top: 0;
+                    }
+                }
+
+                @include tamanho(tablet) {
+                    margin: 3vh 0 0 6vw;
+                }
+            }
+
+            @include tamanho(tablet) {
+                grid-template-columns: 0.4fr 0.6fr;
+            }
+
+            @include tamanho(resp) {
+                grid-template-columns: 1fr;
+                background-color: var(--corBackground);
+                border-radius: 3px;
+                border: 1px solid var(--corComentario);
+            }
+
+            @include tamanho(desktop) {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @include tamanho(resp) {
+            width: 80vw;
+        }
+
+        @include tamanho(tablet) {
+            width: 70%;
+        }
+    }
+
+    @include tamanho(resp) {
+        text-align: center;
+    }
+}
+
+#cursos_menu_grid {
+    display: grid;
+    grid-template-columns: repeat(3fr);
+    grid-gap: 50px;
+
+    #cursos_menu {
+        margin: 0;
+        text-align: left;
+
+        .aulas_itens {
+            width: 70vw;
+            text-align: left;
+
+            .aulas_itens_texto {
+                margin: 0;
+                text-align: left;
+            }
+        }
+    }
+}

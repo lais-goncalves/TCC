@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt" class="mid-mode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Estilo/principal.css" />
+    <link rel="stylesheet" href="Estilo/usuario_perfil.css" />
+    <link rel="stylesheet" href="Estilo/navbar.css" />
+    <link
+      rel="shortcut icon"
+      href="Imagens/Icones/icone_charlie.png"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/04cbf46b06.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="JS/principal.js"></script>
+    <script src="JS/usuario_perfil.js"></script>
+    <title>Perfil do usuário</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" id="logo"
+        ><img
+          src="Imagens/Icones/icone_charlie1-2.png"
+          id="img1"
+          title="logo" />
+        <p>Charlie</p>
+        <img src="Imagens/Icones/icone_charlie2-2.png" id="img2" title="logo"
+      /></a>
+      <a href="javascript:void(0);" class="icon" onclick="resp_nav()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <section id="navbar" class="">
+        <i
+          class="fas fa-moon change_mode"
+          onclick="change_mode()"
+          alt="Modo escuro"
+          id="change_mode"
+        ></i>
+        <a href="sobre_nos.html" id="nav-link">Sobre nós</a>
+        <a href="cursos_menu.html" id="nav-link">Cursos</a>
+        <a href="inscrever.html" class="botao">Inscreva-se</a>
+      </section>
+    </nav>
+
+    <div class="notif_janela" id="notif_janela_sair">
+      <div class="notif notif_sair" id="notif_usuario_sair">
+        <figure class="notif_icone">{!}</figure>
+        <h3 class="notif_titulo">Tem certeza que deseja sair?</h3>
+        <div class="notif_div_botoes">
+          <button class="notif_botao_sim">Sim</button>
+          <button
+            class="notif_botao_nao"
+            onclick="notifFecha('notif_sair', 'notif_janela_sair')"
+          >
+            Não
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <figure class="figuras">
+      <p id="fig0" class="figura">...</p>
+      <p id="fig1" class="figura">()</p>
+      <p id="fig2" class="figura">< /></p>
+      <p id="fig3" class="figura">{}</p>
+      <p id="fig4" class="figura">...</p>
+      <p id="fig5" class="figura">()</p>
+      <p id="fig6" class="figura">0101</p>
+      <p id="fig7" class="figura">. . .</p>
+    </figure>
+
+    <div class="main">
+      <div id="usuario_titulo">
+        <div id="usuario_imagem_div">
+          <img
+            id="usuario_imagem_img"
+            src="https://www.smashbros.com/images/og/kirby.jpg"
+            alt=""
+          />
+          <figcaption>
+            <i class="far fa-file-image"></i>
+            <p>Alterar imagem</p>
+          </figcaption>
+        </div>
+
+        <h2 class="usuario_esquerda">Perfil do usuário</h2>
+      </div>
+
+      <div class="container">
+        <div id="usuario_menu_menu">
+          <p
+            id="usuario_informacoes_pessoais"
+            onclick="usuarioPerfil_mudaMenu(this.id)"
+            class="usuario_ativo_p"
+          >
+            <i
+              class="fas fa-angle-right"
+              id="usuario_informacoes_pessoais_i"
+            ></i
+            >Informações pessoais
+          </p>
+          <p
+            id="usuario_cursos_iniciados"
+            onclick="usuarioPerfil_mudaMenu(this.id)"
+          >
+            <i class="fas fa-angle-right" id="usuario_cursos_iniciados_i"></i
+            >Cursos iniciados
+          </p>
+          <p
+            id="usuario_certificados"
+            onclick="usuarioPerfil_mudaMenu(this.id)"
+          >
+            <i class="fas fa-angle-right" id="usuario_certificados_i"></i
+            >Certificados
+          </p>
+          <p
+            id="usuario_sair"
+            onclick="notifAbre('notif_usuario_sair', 'notif_janela_sair')"
+          >
+            <i class="fas fa-sign-out-alt"></i>Sair
+          </p>
+        </div>
+
+        <div id="usuario_menu_varia">
+          <div id="usuario_informacoes_pessoais_div">
+            <form action="">
+              <input
+                type="text"
+                name="nome"
+                placeholder="Nome completo"
+                id="txtNome"
+              />
+              <input
+                type="text"
+                name="apelido"
+                placeholder="Apelido"
+                id="txtApelido"
+              />
+              <input
+                type="text"
+                name="email"
+                placeholder="E-mail"
+                id="txtEmail"
+              />
+              <input
+                type="text"
+                name="senha"
+                placeholder="Senha"
+                id="txtSenha"
+              />
+            </form>
+          </div>
+
+          <div id="usuario_cursos_iniciados_div">
+            <a href="cursos.html">
+              <div class="usuario_cursos_curso">
+                <img
+                  src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                  alt=""
+                  class="usuario_cursos_imagem"
+                />
+                <div class="usuario_cursos_descricao">
+                  <p class="usuario_cursos_descricao_texto">Nome do curso</p>
+                  <p class="usuario_cursos_descricao_andamento">
+                    * Em andamento
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <a href="cursos.html">
+              <div class="usuario_cursos_curso">
+                <img
+                  src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                  alt=""
+                  class="usuario_cursos_imagem"
+                />
+                <div class="usuario_cursos_descricao">
+                  <p class="usuario_cursos_descricao_texto">Nome do curso</p>
+                  <p class="usuario_cursos_descricao_andamento">
+                    * Em andamento
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <a href="cursos.html">
+              <div class="usuario_cursos_curso">
+                <img
+                  src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                  alt=""
+                  class="usuario_cursos_imagem"
+                />
+                <div class="usuario_cursos_descricao">
+                  <p class="usuario_cursos_descricao_texto">Nome do curso</p>
+                  <p class="usuario_cursos_descricao_andamento">
+                    * Em andamento
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div id="usuario_certificados_div"></div>
+        </div>
+      </div>
+
+      <button class="botao" id="usuario_btnSalvar">Salvar</button>
+    </div>
+
+    <footer><p>Charlie@2021</p></footer>
+  </body>
+</html>

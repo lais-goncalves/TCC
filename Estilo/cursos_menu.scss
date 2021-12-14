@@ -1,0 +1,134 @@
+@import "variaveis";
+
+.main {
+  margin-top: 90px;
+  text-align: left;
+}
+
+#titulo_cursos_menu {
+  margin: 20px auto 40px;
+  display: block;
+  font-size: 35px;
+
+  i {
+    @include grad_font;
+  }
+
+  &::after {
+    width: 0;
+  }
+
+  &,
+  &::after {
+    animation: none;
+  }
+}
+
+#cursos_menu_grid {
+  display: grid;
+  grid-gap: 3vw;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 20px;
+
+  #cursos_menu_item_1 {
+    background-image: url("https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  }
+
+  #cursos_menu_item_2 {
+    background-image: url("https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  }
+
+  #cursos_menu_item_3 {
+    background-image: url("https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  }
+
+  @include tamanho(celular) {
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 0;
+  }
+
+  @include tamanho(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 0;
+  }
+
+  @include tamanho(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 0;
+  }
+
+  .cursos_menu_item {
+    box-shadow: inset 0 0 0 10000px var(--corTransp);
+    border: 1.5px solid var(--corLink); //var(--verde_medio);
+    border-radius: 8px;
+    opacity: 85%;
+    text-align: center;
+    font-weight: bold;
+    background-size: cover;
+    color: var(--corFonte);
+
+    margin-top: 40px;
+    height: 300px;
+
+    @include transicao(0.2s);
+
+    & {
+      color: var(--corFonte);
+    }
+
+    &:hover {
+      .texto_curso {
+        color: white;
+      }
+
+      transform: scale(102%);
+      cursor: pointer;
+      box-shadow: 0 0 15px var(--verde_medio);
+      opacity: 100%;
+      box-shadow: 10px 10px 0px var(--corNotif);
+    }
+
+    &:visited,
+    &:active {
+      color: var(--corFonte);
+    }
+
+    .num_curso {
+      font-size: 5rem;
+      font-family: $fonMono;
+      margin-top: -10px;
+      margin: -40px auto 0;
+    }
+
+    .texto_curso {
+      font-family: $fonMono;
+      font-size: 1.8em;
+      margin-top: 9vh;
+      text-decoration: none;
+    }
+
+    @media screen and(max-height: 600px) {
+      height: 50vh;
+    }
+
+    @media screen and(min-height: 601px) {
+      height: 300px;
+    }
+  }
+}
+
+footer {
+  @include tamanho(celular) {
+    bottom: unset;
+  }
+
+  @include tamanho(tablet) {
+    bottom: unset;
+  }
+
+  @include tamanho(desktop) {
+    bottom: 0;
+  }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Estilo/principal.css" />
+    <link rel="stylesheet" href="Estilo/sobre_nos.css" />
+    <link rel="stylesheet" href="Estilo/navbar.css" />
+    <link
+      rel="shortcut icon"
+      href="Imagens/Icones/icone_charlie.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+      media="screen"
+    />
+    <link rel="stylesheet" href="/path/to/flickity.css" media="screen" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link rel="stylesheet" href="/path/to/flickity.css" media="screen" />
+    <script
+      src="https://kit.fontawesome.com/04cbf46b06.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="JS/principal.js"></script>
+    <script src="/path/to/flickity.pkgd.min.js"></script>
+    <title>Sobre nós</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" id="logo"
+        ><img
+          src="Imagens/Icones/icone_charlie1-2.png"
+          id="img1"
+          title="logo" />
+        <p>Charlie</p>
+        <img src="Imagens/Icones/icone_charlie2-2.png" id="img2" title="logo"
+      /></a>
+      <a href="javascript:void(0);" class="icon" onclick="resp_nav()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <section id="navbar" class="">
+        <i
+          class="fas fa-moon change_mode"
+          onclick="change_mode()"
+          alt="Modo escuro"
+          id="change_mode"
+        ></i>
+        <a
+          href="sobre_nos.html"
+          id="nav-link"
+          style="text-decoration: underline"
+          >Sobre nós</a
+        >
+        <a href="cursos_menu.html" id="nav-link">Cursos</a>
+        <a href="inscrever.html" class="botao">Inscreva-se</a>
+      </section>
+    </nav>
+
+    <figure class="figuras">
+      <p id="fig0" class="figura">. . .</p>
+      <p id="fig1" class="figura">()</p>
+      <p id="fig2" class="figura">< /></p>
+      <p id="fig3" class="figura">{}</p>
+      <p id="fig4" class="figura">...</p>
+      <p id="fig5" class="figura">()</p>
+      <p id="fig6" class="figura">0101</p>
+      <p id="fig7" class="figura">. . .</p>
+    </figure>
+
+    <div class="main">
+      <h3>Sobre nós</h3>
+      <p class="legenda">Conheça o nosso time!</p>
+
+      <div
+        class="main-carousel"
+        data-flickity='{ "groupCells": 1, "cellAlign": "center", "contain": true, "wrapAround": true, "autoPlay": 3500, "pauseAutoPlayOnHover": false  }'
+      >
+        <div class="carousel-cell">
+          <img src="Imagens/antunes.jpeg" alt="" />
+          <p class="nome">Guilherme Antunes</p>
+          <p class="cargo">Líder e Backend e mobile dev</p>
+          <p class="frase">
+            <q>Eu sou o melhor garoto de programa da sala</q>
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <img src="Imagens/lais.png" alt="" />
+          <p class="nome">Laís</p>
+          <p class="cargo">Designer e frontend dev</p>
+          <p class="frase">
+            <q>Eu fiquei até 3 da manhã fazendo esse site me da MB por favor</q>
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <img src="Imagens/albuwerqw.jpeg" alt="" />
+          <p class="nome">Lucas Albuqeurwe</p>
+          <p class="cargo">Backend dev</p>
+          <p class="frase">
+            <q>Eu nso sei esvcerev</q>
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <img src="Imagens/dalton.jpeg" alt="" />
+          <p class="nome">Dalton</p>
+          <p class="cargo">Responsável por modelagem de dados e documentação</p>
+          <p class="frase">
+            <q>Seja quem você mais admira</q>
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <img src="Imagens/gian.jpeg" alt="" />
+          <p class="nome">Gian</p>
+          <p class="cargo">Auxiliar geral (faz tudo)</p>
+          <p class="frase">
+            <q>O talento acima de tudo</q>
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <img src="Imagens/costa.jpg" alt="" />
+          <p class="nome">Luccas Costa</p>
+          <p class="cargo">Responsável por documentação e modelagem de dados</p>
+          <p class="frase">
+            <q>caí de costakkkk</q>
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <img src="Imagens/igor.jpeg" alt="" />
+          <p class="nome">Igor Carlos</p>
+          <p class="cargo">Divulgador do projeto</p>
+          <p class="frase">
+            <q>Não escutei</q>
+          </p>
+        </div>
+      </div>
+
+      <div id="banner">
+        <h2>Nosso banner</h3>
+        <img src="Imagens/banner.png" alt="">
+      </div>
+    </div>
+    
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="/path/to/flickity.pkgd.min.js"></script>
+  </body>
+</html>

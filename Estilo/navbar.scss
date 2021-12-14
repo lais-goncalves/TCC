@@ -1,0 +1,150 @@
+@import "variaveis";
+
+// ----------- INÍCIO -----------
+
+@include tamanho(resp) {
+  nav {
+    opacity: 100%;
+    background-color: transparent;
+
+    @include tamanho(celular) {
+      background-color: var(--corBackground);
+    }
+  }
+
+  #nav-link {
+    display: none;
+  }
+
+  .botao {
+    display: none;
+  }
+
+  .icon {
+    position: static;
+    margin: 17px 30px 0;
+    float: right;
+  }
+
+  nav i {
+    width: 15px;
+    height: 15px;
+    color: var(--corFonte);
+    cursor: pointer;
+
+    @include transicao(0.2s);
+  }
+
+  #change_mode {
+    position: absolute;
+
+    @include tamanho(tablet) {
+      right: 60px;
+    }
+  }
+
+  //---------------------------------
+
+  .responsivo {
+    height: 100vh;
+    width: 450px;
+    background-color: var(--corBackground);
+    float: right;
+    box-shadow: 10px 40px 20px rgba(0, 0, 0, 0.5);
+
+    @include tamanho(celular) {
+      margin: 10vh auto;
+      font-size: 4vw;
+      text-align: center;
+    }
+
+    #nav-link {
+      float: none;
+      display: block;
+      margin-top: 10vh;
+
+      @include tamanho(celular) {
+        margin: 10vh auto;
+        font-size: 4vw;
+        text-align: center;
+      }
+
+      @include tamanho(tablet) {
+        margin: 6vh 0 6vh 40px;
+        font-size: 2.6vw;
+        text-align: left;
+      }
+    }
+
+    .icon {
+      display: inline-block;
+      @include transicao(0.2s);
+    }
+
+    #change_mode {
+      display: none;
+    }
+
+    .botao {
+      float: none;
+      display: block;
+
+      @include tamanho(celular) {
+        text-align: center;
+        margin: 30vh auto;
+        font-size: 4vw;
+        color: var(--corEscuro);
+        border: var(--corEscuro);
+
+        @include gradiente;
+
+        &:hover {
+          transform: scale(105%);
+        }
+      }
+
+      @include tamanho(tablet) {
+        font-size: 2.6vw;
+        margin: 6vh 0 6vh 40px;
+
+        &:hover {
+          transform: scale(105%);
+        }
+      }
+    }
+
+    @include tamanho(celular) {
+      width: 100%;
+
+      & i {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      #change_mode {
+        right: 10vw;
+        top: 100px;
+      }
+    }
+  }
+
+  @include tamanho(celular) {
+    .navbar i {
+      display: block;
+      position: absolute;
+      right: 0;
+    }
+
+    #change_mode {
+      top: 50px;
+    }
+  }
+}
+
+@include tamanho(resp-up) {
+  .icon {
+    display: none;
+  }
+}

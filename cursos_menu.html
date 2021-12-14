@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt" class="mid-mode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Estilo/principal.css" />
+    <link rel="stylesheet" href="Estilo/cursos_menu.css" />
+    <link rel="stylesheet" href="Estilo/navbar.css" />
+    <link
+      rel="shortcut icon"
+      href="Imagens/Icones/icone_charlie.png"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/04cbf46b06.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="JS/principal.js"></script>
+    <title>Cursos - menu</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" id="logo"
+        ><img
+          src="Imagens/Icones/icone_charlie1-2.png"
+          id="img1"
+          title="logo" />
+        <p>Charlie</p>
+        <img src="Imagens/Icones/icone_charlie2-2.png" id="img2" title="logo"
+      /></a>
+      <a href="javascript:void(0);" class="icon" onclick="resp_nav()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <section id="navbar" class="">
+        <i
+          class="fas fa-moon change_mode"
+          onclick="change_mode()"
+          alt="Modo escuro"
+          id="change_mode"
+        ></i>
+        <a href="sobre_nos.html" id="nav-link">Sobre nós</a>
+        <a
+          href="cursos_menu.html"
+          style="text-decoration: underline"
+          id="nav-link"
+          >Cursos</a
+        >
+        <a href="inscrever.html" class="botao">Inscreva-se</a>
+      </section>
+    </nav>
+
+    <figure class="figuras">
+      <p id="fig0" class="figura">. . .</p>
+      <p id="fig1" class="figura">()</p>
+      <p id="fig2" class="figura">< /></p>
+      <p id="fig3" class="figura">{}</p>
+      <p id="fig4" class="figura">...</p>
+      <p id="fig5" class="figura">()</p>
+      <p id="fig6" class="figura">0101</p>
+      <p id="fig7" class="figura">. . .</p>
+    </figure>
+
+    <!----- MAIN ----->
+
+    <section id="diretorios" class="comentario">
+      <p id="dir_atual"><a href="cursos_menu.html">Todos os cursos</a></p>
+    </section>
+
+    <div class="main">
+      <div id="curso">
+        <h2 id="titulo_cursos_menu">Todos os cursos</h2>
+      </div>
+
+      <div id="cursos_menu_grid">
+        <a href="cursos.html" class="cursos_menu_item" id="cursos_menu_item_1">
+          <div class="num_curso">1</div>
+          <div class="texto_curso"><p>Curso 1</p></div>
+        </a>
+
+        <a href="cursos.html" class="cursos_menu_item" id="cursos_menu_item_2">
+          <div class="num_curso">2</div>
+          <div class="texto_curso"><p>Curso 2</p></div>
+        </a>
+
+        <a href="cursos.html" class="cursos_menu_item" id="cursos_menu_item_3">
+          <div class="num_curso">3</div>
+          <div class="texto_curso"><p>Curso 3</p></div>
+        </a>
+      </div>
+    </div>
+
+    <footer><p>Charlie@2021</p></footer>
+  </body>
+</html>

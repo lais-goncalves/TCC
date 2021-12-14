@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+// ----------- VARIÁVEIS -----------
+.black-mode:root {
+  --corBackground: #08111b /*#141442*/;
+  --corBackground2: #020b1399;
+  --corBackground3: #01050899;
+  --corBackground4: linear-gradient(
+    180deg,
+    rgba(8, 17, 27, 1) 0%,
+    rgba(6, 18, 31, 1) 100%
+  );
+  --corTransp: #03154180;
+  --corFonte: white;
+  --verde_medio: #30828dde;
+  --corComentario: #3d5c7e;
+  --corEscuro: #010a12;
+  --corLink: #069aad;
+  --corNotif: #04081199;
+  --corNotif2: #01080e;
+  --corNotifFont: white;
+}
+
+//-- MID MODE --
+.mid-mode:root {
+  --corBackground: #4085e0;
+  --corBackground2: #1b6bd399; //#0a5ebd99
+  --corBackground3: #04489699;
+  --corBackground4: linear-gradient(
+    180deg,
+    rgba(64, 133, 224, 1) 0%,
+    #488de8 100%
+  );
+  --corTransp: #087ad8b6;
+  --corFonte: white;
+  --verde_medio: #4298b3de;
+  --corComentario: #6aa3e4;
+  --corEscuro: #010712;
+  --corLink: #71cef3;
+  --corLinkTransp: rgba(95, 206, 250, 0.4);
+  --corNotif: #1369b999;
+  --corNotif2: #e2edf7;
+  --corNotifFont: #031120;
+}
+
+//-- WHITE MODE --
+.white-mode:root {
+  --corBackground: white;
+  --corBackground2: #b4e5f390; //#b6dde790
+  --corBackground3: #8eb9c490;
+  --corBackground4: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(240, 247, 255, 1) 100%
+  );
+  --corTransp: #92e6fdb6;
+  --corFonte: #0d4468;
+  --verde_medio: #88d6dfd8;
+  --corComentario: #7bbed3;
+  --corEscuro: #010a12;
+  --corLink: #026891;
+  --corNotif: #daecec99;
+  --corNotif2: #fff;
+  --corNotifFont: #031120;
+}
+
+//#90e1f090
+
+$fonMono: "Oxygen Mono";
+$fonNormal: "Quicksand";
+
+$verde: #34f5c6;
+$azul: #1dcdfe;
+$azul2: #3e5988;
+$cores: $verde, $azul;
+
+// ------------- ANIMAÇÃO -------------
+@keyframes efeito_barra {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes efeito_maquina {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes efeito_mostra {
+  from {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes efeito_mostra_notif {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// ------------- MIXINS -------------
+@mixin centralizar {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin gradiente {
+  background: -webkit-linear-gradient(to right, $cores);
+  background: -moz-linear-gradient(to right, $cores);
+  background: -o-linear-gradient(to right, $cores);
+  background: linear-gradient(to right, $cores);
+}
+
+@mixin grad_font {
+  @include gradiente;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin transicao($tempo) {
+  -webkit-transition: $tempo;
+  -moz-transition: $tempo;
+  -o-transition: $tempo;
+  transition: $tempo;
+}
+
+@mixin sem_select {
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin after {
+  content: "";
+  margin-left: 5px;
+  display: inline-block;
+
+  animation: efeito_barra 1s normal;
+
+  @include gradiente;
+
+  @include tamanho(celular) {
+    height: 3px;
+    width: 15px;
+  }
+
+  @include tamanho(tablet) {
+    height: 3.5px;
+    width: 19px;
+  }
+}
+
+@mixin tamanho($range) {
+  $phone-upper-boundary: 600px;
+  $resp: 700px;
+  $tablet-portrait-upper-boundary: 900px;
+  $tablet-landscape-upper-boundary: 1200px;
+  $desktop-upper-boundary: 1800px;
+
+  @if $range == celular {
+    @media (max-width: #{$phone-upper-boundary - 1}) {
+      @content;
+    }
+  } @else if $range == tablet {
+    @media (min-width: $phone-upper-boundary) {
+      @content;
+    }
+  } @else if $range == resp {
+    @media (max-width: $resp) {
+      @content;
+    }
+  } @else if $range == resp-up {
+    @media (min-width: #{$resp + 1}) {
+      @content;
+    }
+  } @else if $range == desktop {
+    @media (min-width: $tablet-landscape-upper-boundary) {
+      @content;
+    }
+  } @else if $range == big-desktop {
+    @media (min-width: $desktop-upper-boundary) {
+      @content;
+    }
+    else {
+      @media (min-width: $range) {
+        @content;
+      }
+    }
+  }
+}

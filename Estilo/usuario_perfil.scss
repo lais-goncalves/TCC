@@ -1,0 +1,447 @@
+@import "variaveis";
+
+.main {
+  margin-top: 8vh;
+}
+
+.container {
+  text-align: center;
+}
+
+#usuario_titulo {
+  display: block;
+  margin: 3vh auto 2vh;
+
+  @include transicao(0.06s);
+
+  #usuario_imagem_div {
+    display: inline-block;
+    position: relative;
+    margin-right: 30px;
+
+    @include transicao(0.2s);
+
+    #usuario_imagem_img {
+      border-radius: 50%;
+
+      @include transicao(0.06s);
+
+      @include tamanho(celular){
+        width: 140px;
+        height: 140px;
+      }
+
+      @include tamanho(tablet){
+        width: 150px;
+        height: 150px;
+      }
+
+      @include tamanho(desktop){
+        width: 170px;
+        height: 170px;
+      }
+    }
+
+    figure{
+      @include tamanho(resp){
+        font-size: 17px;
+      }
+
+      @include tamanho(tablet){
+        font-size: 20px;
+      }
+
+      @include tamanho(desktop){
+        font-size: 30px;
+      }
+    }
+
+    figcaption {
+      display: inline-block;
+      position: absolute;
+      border-radius: 50%;
+      padding: 50px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--corNotif);
+      cursor: pointer;
+      text-align: center;
+      opacity: 0;
+
+      @include transicao(0.06s);
+
+      i {
+        font-size: 30px;
+
+        @include tamanho(resp){
+          font-size: 20px;
+        }
+  
+        @include tamanho(tablet){
+          font-size: 25px;
+        }
+  
+        @include tamanho(desktop){
+          font-size: 30px;
+        }
+      }
+
+      @include tamanho(celular){
+        width: 140px;
+        height: 140px;
+      }
+
+      @include tamanho(tablet){
+        width: 150px;
+        height: 150px;
+      }
+
+      @include tamanho(desktop){
+        width: 170px;
+        height: 170px;
+      }
+    }
+
+    &:hover {
+      figcaption {
+        opacity: 1;
+      }
+    }
+
+    @include tamanho(celular){
+      width: 140px;
+      height: 140px;
+    }
+
+    @include tamanho(tablet){
+      width: 150px;
+      height: 150px;
+    }
+
+    @include tamanho(desktop){
+      width: 170px;
+      height: 170px;
+    }
+  }
+
+  h2 {
+    display: inline-block;
+    animation: none;
+    margin: 0 auto 50px;
+
+    &::after {
+      animation: none;
+    }
+
+    @include tamanho(celular){
+      margin: 2vh auto 0;
+    }
+
+    @include tamanho(resp){
+      margin: 2vh auto 0;
+    }
+  
+    @include tamanho(tablet){
+      margin: 20px auto 20px 3vw;
+    }
+
+    @include tamanho(desktop){
+      margin: 0 auto 30px;
+    }
+  }
+}
+
+#usuario_menu_menu {
+  border: 1px solid var(--corLink);
+  margin: 20px auto 6vh;
+  border-radius: 8px;
+  position: relative;
+  padding: 18px 40px;
+  text-align: left;
+  font-size: 17px;
+  box-shadow: 9px 9px 0px var(--corNotif);
+  background-color: var(--corBackground);
+  justify-content: center;
+
+  @include transicao(0.2s);
+
+  p {
+    margin: 30px 0;
+    cursor: pointer;
+    margin-left: 20px;
+    display: block;
+    padding: 2px 0;
+
+    i {
+      @include grad_font;
+      font-size: 18px;
+      position: absolute;
+      left: 30px;
+      display: none;
+    }
+
+    &:hover {
+      border-bottom: 1px solid var(--corFonte);
+
+      @include tamanho(celular){
+        border: none;
+        text-decoration: underline;
+      }
+    }
+
+    @include tamanho(celular){
+      display: block;
+      padding: auto 10px;
+      display: inline-block;
+    }
+
+    @include tamanho(resp){
+      margin: 10px 0;
+      margin-left: 0;
+      padding: 0;
+      font-size: 16px;
+    }
+
+    @include tamanho(tablet) {
+      display: inline-block;
+      margin: 6px 15px;
+    }
+  }
+
+  #usuario_sair {
+    color: var(--corLink);
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-left: 55px;
+    font-family: $fonMono;
+
+    &:hover {
+      color: $verde;
+      border-bottom: none;
+      text-decoration: none;
+    }
+
+    i {
+      font-size: 20px;
+      padding-left: 20px;
+    }
+
+    @include tamanho(celular){
+      display: block;
+      margin: 30px 0 10px;
+    }
+
+    @include tamanho(tablet) {
+      display: inline-block;
+      margin: 10px 17px;
+    }
+  }
+
+  @include tamanho(celular){
+    text-align: center;
+    width: 45vw;
+    padding: 5vh 40px;
+  }
+
+  @include tamanho(resp){
+    padding: 3vh 30px;
+    margin: 20px auto 4vh;
+  }
+
+  @include tamanho(tablet) {
+    width: fit-content;
+    float: middle;
+    padding: 15px 20px;
+    left: 0;
+  }
+
+  @include tamanho(desktop){
+    &:hover {
+      transform: scale(101%);
+    }
+  }
+}
+
+#usuario_menu_varia {
+  display: inline-block;
+  max-width: 50vw;
+
+  #usuario_cursos_iniciados_div,
+  #usuario_certificados_div {
+    display: none;
+  }
+
+  @include tamanho(resp){
+    max-width: 80vw;
+  }
+}
+
+form {
+  width: 100%;
+
+  input {
+    margin-bottom: 6vh;
+    font-size: 1.2em;
+
+    @include tamanho(resp) {
+      width: 80vw;
+      font-size: 16px;
+    }
+
+    @include tamanho(tablet) {
+      width: 53vw;
+    }
+
+    @include tamanho(desktop) {
+      width: 35vw;
+    }
+  }
+}
+
+#usuario_btnSalvar {
+  padding: 10px 50px;
+  font-size: 1.5em;
+  margin: 2vh auto 0;
+}
+
+.usuario_ativo_p {
+  font-weight: bold;
+  border-bottom: 1px solid var(--corFonte);
+
+  @include tamanho(celular){
+    border: none;
+    text-decoration: underline;
+  }
+}
+
+#usuario_cursos_iniciados_div {
+  text-align: left;
+  @include transicao(0.2s);
+  margin: auto;
+
+  .usuario_cursos_curso {
+    margin-bottom: 1vh;
+    display: block;
+    border-radius: 5px;
+    @include transicao(0.1s);
+
+    &:hover {
+      background-color: var(--corNotif);
+    }
+
+    .usuario_cursos_imagem {
+      border-radius: 5px;
+      display: inline-block;
+      position: relative;
+
+      @include transicao(0.25s);
+
+      @include tamanho(resp){
+        display: none;
+      }
+
+      @include tamanho(tablet){
+        width: 25vw;
+      }
+
+      @include tamanho(desktop){
+        width: 18vw;
+      }
+    }
+
+    .usuario_cursos_descricao {
+      display: inline-block;
+      position: absolute;
+      margin: 2vw 3vw;
+
+      p {
+        margin-bottom: 2px;
+      }
+
+      .usuario_cursos_descricao_texto {
+        font-family: $fonMono;
+        font-size: 22px;
+        margin: 0;
+
+        @include tamanho(resp){
+          font-size: 17px;
+        }
+      }
+
+      .usuario_cursos_descricao_andamento {
+        color: var(--corFonte);
+        background-color: var(--verde_medio);
+        padding: 2px 10px;
+
+        @include tamanho(resp){
+          padding: 2px 0px;
+          font-size: 15px;
+        }
+      }
+    }
+
+    @include tamanho(celular) {
+      border: 1px solid var(--corComentario);
+      height: 100px;
+      border-radius: 3px;
+      padding: 10px;
+      width: 80vw;
+      margin-bottom: 3vh;
+    }
+
+    @include tamanho(resp){
+      border: 1px solid var(--corComentario);
+      height: 100px;
+      border-radius: 3px;
+      padding: 10px;
+    }
+
+    @include tamanho(tablet) {
+      width: 52vw;
+    }
+
+    @include tamanho(desktop) {
+      width: 38vw;
+    }
+  }
+}
+
+#usuario_btnSalvar {
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+
+@keyframes animatetop {
+  from {
+    top: -500px;
+    opacity: 0;
+  }
+  to {
+    top: 35%;
+    opacity: 1;
+  }
+}
+
+#notif_usuario_sair {
+  top: 35%;
+  left: 34%;
+  display: none;
+
+  h3 {
+    font-size: 1.5em;
+
+    &::after {
+      animation: none;
+    }
+  }
+}
+
+/*
+footer {
+  bottom: 0;
+}
+*/
+
+//https://www.portaldodog.com.br/cachorros/wp-content/uploads/2019/01/FOFO.jpg
+//https://png.pngitem.com/pimgs/s/111-1114675_user-login-person-man-enter-person-login-icon.png
